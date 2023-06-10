@@ -1,0 +1,92 @@
+<style type="text/css">
+.heading
+{
+height:120px;
+width:100%;
+background-color:#f1f1f1;
+box-shadow:2px 2px 7px black;
+
+}
+input
+{
+height:50px;
+width:50%;
+border:none;
+
+}
+button
+{
+height:50px;
+width:50px;
+border:none;
+color:white;
+}
+font
+{
+float:left;
+font-size:20px;
+}
+iframe
+{
+width:100%;
+height:80%;
+border:none;
+}
+</style>
+	<div class="heading">
+<div id="url"></div>
+
+	<br>
+	<br>
+
+<button onclick="menu()">&#9776</button>
+<button onclick="back()">&#x2190</button>
+<button onclick="forward()">&#x2192</button>
+<button onclick="search()"> &#x21BB</button>
+	<input placeholder="Search.."id="input"name="name">
+	<button onclick="search()"id="search">&#128269</button>
+</center>
+</div>
+<br>
+<div id="iframe"></div>
+
+
+<script type="text/javascript">
+function search()
+{
+if(document.getElementById("input").value.length>0)
+{
+document.getElementById("iframe").innerHTML="<iframe src='https://google.com/search?igu=1&q="+document.getElementById("input").value+"'id='0'></iframe>"
+document.getElementById("url").innerHTML="URL:https://google.com/search?igu=1&q="+document.getElementById("input").value;
+document.getElementById("search").style.backgroundColor="green"
+}
+}
+function hide()
+{
+if(document.getElementById("input").value=="")
+{
+document.getElementById("iframe").innerHTML=""
+document.getElementById("url").innerHTML=""
+document.getElementById("search").style.backgroundColor=""
+}
+
+}
+function back()
+{
+window.history.back()
+
+}
+function forward()
+{
+window.history.forward()
+}
+function reload()
+{
+document.getElementById("0").reload()
+}
+setInterval("hide()",1)
+
+</script>
+<noscript>
+Your browser does not support Java Script.
+</noscript>
